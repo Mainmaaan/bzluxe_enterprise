@@ -2,21 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Routing\Controller as BaseController;
 
-class ProductController extends Controller
+class Controller extends BaseController
 {
-    public function show($id)
-    {
-        $products = session('products_seed', []);
-
-        // fallback if using DB later
-        $product = collect($products)->firstWhere('id', $id);
-
-        if (!$product) {
-            abort(404);
-        }
-
-        return view('product', compact('product'));
-    }
+    use AuthorizesRequests, ValidatesRequests;
 }

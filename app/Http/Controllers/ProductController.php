@@ -8,7 +8,6 @@ class ProductController extends Controller
 {
     public function show($id)
     {
-        // temporary product seed (same as web.php)
         $products = [
             ['id' => 1, 'name' => 'Gold Ring', 'price' => 50000, 'image' => 'https://via.placeholder.com/300'],
             ['id' => 2, 'name' => 'Diamond Necklace', 'price' => 120000, 'image' => 'https://via.placeholder.com/300'],
